@@ -129,50 +129,83 @@
 // console.log(a);
 // console.log(b);
 
-// 10 - loop em array
-const users = ["Vinicius", "Giovanna", "Sophia", "Alice", "Daniel"];
+// // 10 - loop em array
+// const users = ["Vinicius", "Giovanna", "Sophia", "Alice", "Daniel"];
 
-for (let i = 0; i < users.length; i++) {
-    console.log(`Listando o usuário: ${users[i]}`);
-}
+// for (let i = 0; i < users.length; i++) {
+//     console.log(`Listando o usuário: ${users[i]}`);
+// }
 
-// 11 - push e pop
-const array = ["a", "b", "c"];
+// // 11 - push e pop
+// const array = ["a", "b", "c"];
 
-array.push("d");
+// array.push("d");
 
-console.log(array);
+// console.log(array);
 
-console.log(array.length);
+// console.log(array.length);
 
-array.pop();
+// array.pop();
 
-console.log(array);
+// console.log(array);
 
-const itemRemovido = array.pop();
+// const itemRemovido = array.pop();
 
-console.log(itemRemovido);
+// console.log(itemRemovido);
 
-console.log(array);
+// console.log(array);
 
-array.push("z", "x", "y");
+// array.push("z", "x", "y");
 
-console.log(array);
+// console.log(array);
 
-// 12 - shift e unshift
-const letters = ["a", "b", "c"];
+// // 12 - shift e unshift
+// const letters = ["a", "b", "c"];
 
-const letter = letters.shift();
+// const letter = letters.shift();
 
-console.log(letter);
+// console.log(letter);
 
-console.log(letters);
+// console.log(letters);
 
-letters.unshift("p", "q", "r");
+// letters.unshift("p", "q", "r");
 
-letters.unshift("z");
+// letters.unshift("z");
 
-console.log(letters);
+// console.log(letters);
 
 // 13 - indexOf e lastIndexOf
-const myElements = ["Morango", "Ma"]
+// const myElements = ["Morango", "Maçã", "Abacate", "Pêra", "Abacate"];
+
+// console.log(myElements.indexOf("Maçã"));
+// console.log(myElements.indexOf("Abacate"));
+
+// console.log(myElements[2]);
+// console.log(myElements[myElements.indexOf("Abacate")]);
+
+// console.log(myElements.lastIndexOf("Abacate"));
+
+// console.log(myElements.indexOf("Mamão"));
+
+// console.log(myElements.lastIndexOf("Mamão"));
+
+// 14 - slice
+const testeSlice = ["a", "b", "c", "d", "e", "f"];
+
+const subArray = testeSlice.slice(2, 4);
+
+console.log(subArray);
+
+console.log(testeSlice);
+
+const subArray2 = testeSlice.slice(2, 4 + 1);
+
+console.log(subArray2);
+
+const subArray3 = testeSlice.slice(10, 20);
+
+console.log(subArray3);
+
+const subArray4 = testeSlice.slice(2);
+
+console.log(subArray4);
