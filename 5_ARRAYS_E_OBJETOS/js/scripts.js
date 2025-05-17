@@ -173,3 +173,6 @@ letters.unshift("p", "q", "r");
 letters.unshift("z");
 
 console.log(letters);
+
+// 13 - indexOf e lastIndexOf
+const myElements = ["Morango", "Ma"]
