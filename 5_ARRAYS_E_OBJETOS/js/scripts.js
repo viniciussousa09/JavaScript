@@ -1,6 +1,8 @@
 // // 1 - arrays
 // const lista = [1, 2, 3, 4, 5];
 
+// const { use } = require("react");
+
 // console.log(lista);
 
 // console.log(typeof lista);
@@ -245,51 +247,135 @@
 
 // console.log(reverseTest);
 
-// 18 - trim
-const trimTest = "   testando \n  ";
+// // 18 - trim
+// const trimTest = "   testando \n  ";
 
-console.log(trimTest);
+// console.log(trimTest);
 
-console.log(trimTest.trim());
+// console.log(trimTest.trim());
 
-console.log(trimTest.length);
+// console.log(trimTest.length);
 
-console.log(trimTest.trim().length);
+// console.log(trimTest.trim().length);
 
-// 19 - padStart
-const testePadStart = "1";
+// // 19 - padStart
+// const testePadStart = "1";
 
-const newNumber = testePadStart.padStart(4, "0");
+// const newNumber = testePadStart.padStart(4, "0");
 
-console.log(testePadStart);
+// console.log(testePadStart);
 
-console.log(newNumber);
+// console.log(newNumber);
 
-const testePadEnd = newNumber.padEnd(10, "0");
+// const testePadEnd = newNumber.padEnd(10, "0");
 
-console.log(testePadEnd);
+// console.log(testePadEnd);
 
-// 20 - split
-const frase = "O rato roeu a roupa do rei de Roma";
+// // 20 - split
+// const frase = "O rato roeu a roupa do rei de Roma";
 
-const arrayDaFrase = frase.split(" ");
+// const arrayDaFrase = frase.split(" ");
 
-console.log(arrayDaFrase);
+// console.log(arrayDaFrase);
 
-// 21 - Join
-const fraseDeNovo = arrayDaFrase.join(" ");
+// // 21 - Join
+// const fraseDeNovo = arrayDaFrase.join(" ");
 
-console.log(fraseDeNovo);
+// console.log(fraseDeNovo);
 
-const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
+// const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
 
-const fraseDeCompra = `Precisamos comprar: ${itensParaComprar.join(", ")}.`;
+// const fraseDeCompra = `Precisamos comprar: ${itensParaComprar.join(", ")}.`;
 
-console.log(fraseDeCompra);
+// console.log(fraseDeCompra);
 
-// 22 - repeat
-const palavra = "Testando ";
+// // 22 - repeat
+// const palavra = "Testando ";
 
-console.log(palavra.repeat(5));
+// console.log(palavra.repeat(5));
 
-// 23 - Rest Parameters
+// // 23 - Rest Parameters
+// const somaInfinita = (...args) => {
+
+//     let total = 0;
+
+//     for (let i = 0; i < args.length; i++) {
+//         total += args[i];
+//     }
+
+//     return total;
+// };
+
+// console.log(somaInfinita(1, 2, 3));
+
+// console.log(somaInfinita(1, 20, 34, 3424, 128812, 12723, 12, 23, 54, 12));
+
+// 24 - for...of
+const somaInfinita2 = (...args) => {
+    let total = 0;
+
+    for (num of args) {
+        total += num;
+    }
+
+    return total;
+};
+
+console.log(somaInfinita2(1, 2, 4));
+
+console.log(somaInfinita2(5, 6, 1, 23, 5, 6, 3, 5));
+
+// 25 - Destructuring em objetos
+const userDetails = {
+    firstName: "Vinicius",
+    lastName: "Sousa",
+    job: "Programador",
+};
+
+const { firstName, lastName, job } = userDetails;
+
+console.log(firstName, lastName, job);
+
+// renomear variaveis
+const { firstName: primeiroNome } = userDetails;
+
+console.log(firstName);
+
+// 26 - destructuring arrays
+const myList = ["Avião", "Submarino", "Carro", "Trator"];
+
+const [veiculoA, veiculoB, veiculoC] = myList;
+
+console.log(veiculoA, veiculoB, veiculoC);
+
+// 27 - JSON
+const myJson = `{"name": "Vinicius", "age": 31, "skills": ["PHP", "JavaScript", "Python"]}`;
+
+console.log(myJson);
+
+console.log(typeof myJson);
+
+// 28 - JSON para objeto e objeto para JSON
+
+const myObject = JSON.parse(myJson);
+
+console.log(myObject);
+
+console.log(myObject.name);
+
+console.log(typeof myObject);
+
+// json invalido
+const badJson = `{"name": Vinicius, "age": 31}`;
+
+// const myBadObject = JSON.parse(badJson);
+
+myObject.isOpenToWork = true;
+
+console.log(myObject);
+
+const myNewJson = JSON.stringify(myObject);
+
+console.log(myNewJson);
+
+console.log(typeof myNewJson);
