@@ -189,23 +189,107 @@
 
 // console.log(myElements.lastIndexOf("Mamão"));
 
-// 14 - slice
-const testeSlice = ["a", "b", "c", "d", "e", "f"];
+// // 14 - slice
+// const testeSlice = ["a", "b", "c", "d", "e", "f"];
 
-const subArray = testeSlice.slice(2, 4);
+// const subArray = testeSlice.slice(2, 4);
 
-console.log(subArray);
+// console.log(subArray);
 
-console.log(testeSlice);
+// console.log(testeSlice);
 
-const subArray2 = testeSlice.slice(2, 4 + 1);
+// const subArray2 = testeSlice.slice(2, 4 + 1);
 
-console.log(subArray2);
+// console.log(subArray2);
 
-const subArray3 = testeSlice.slice(10, 20);
+// const subArray3 = testeSlice.slice(10, 20);
 
-console.log(subArray3);
+// console.log(subArray3);
 
-const subArray4 = testeSlice.slice(2);
+// const subArray4 = testeSlice.slice(2);
 
-console.log(subArray4);
+// console.log(subArray4);
+
+// // 15 - forEach
+// const nums = [1, 2, 3, 4, 5];
+
+// nums.forEach((numero) => {
+//     console.log(`O número é ${numero}`);
+// });
+
+// const posts = [
+//     { title: "Primeiro post", category: "PHP" },
+//     { title: "Segundo post", category: "JavaScript" },
+//     { title: "Terceiro post", category: "Python" },
+// ];
+
+// posts.forEach((post) => {
+//     console.log(`Exibindo post: ${post.title}, da categoria: ${post.category}`);
+// });
+
+// // 16 - includes
+// const brands = ["BMW", "VW", "Fiat"];
+
+// console.log(brands.includes("Fiat"));
+
+// console.log(brands.includes("Kya"));
+
+// if (brands.includes("BMW")) {
+//     console.log("Há carros da marca BMW!");
+// }
+
+// // 17 - reverse
+// const reverseTest = [1, 2, 3, 4, 5];
+
+// reverseTest.reverse();
+
+// console.log(reverseTest);
+
+// 18 - trim
+const trimTest = "   testando \n  ";
+
+console.log(trimTest);
+
+console.log(trimTest.trim());
+
+console.log(trimTest.length);
+
+console.log(trimTest.trim().length);
+
+// 19 - padStart
+const testePadStart = "1";
+
+const newNumber = testePadStart.padStart(4, "0");
+
+console.log(testePadStart);
+
+console.log(newNumber);
+
+const testePadEnd = newNumber.padEnd(10, "0");
+
+console.log(testePadEnd);
+
+// 20 - split
+const frase = "O rato roeu a roupa do rei de Roma";
+
+const arrayDaFrase = frase.split(" ");
+
+console.log(arrayDaFrase);
+
+// 21 - Join
+const fraseDeNovo = arrayDaFrase.join(" ");
+
+console.log(fraseDeNovo);
+
+const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
+
+const fraseDeCompra = `Precisamos comprar: ${itensParaComprar.join(", ")}.`;
+
+console.log(fraseDeCompra);
+
+// 22 - repeat
+const palavra = "Testando ";
+
+console.log(palavra.repeat(5));
+
+// 23 - Rest Parameters
