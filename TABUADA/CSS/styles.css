@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica;
 }
 
 body {
@@ -53,10 +53,10 @@ h2 {
     text-align: center;
 }
 
-#multiplication-form input [type="submit"] {
+#multiplication-form input[type="submit"] {
     max-height: 50px;
     padding: 0.6rem 1.2rem;
-    width: 200%;
+    width: 200px;
     color: #fff;
     background-color: #333;
     border: 1px solid #333;
@@ -75,15 +75,21 @@ h2 {
     background-color: #fff;
     color: #333;
     border-radius: 1rem;
+}
+
+#multiplication-operations .row {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 0.5rem;
     width: 150px;
 }
 
-#multiplication-operation .row {
-    display: flex;
-    justify-content: center;
-    border: 1px solid #fff;
+#multiplication-operations .row:last-child {
+    border-bottom: 1px solid #ccc;
 }
 
-#multiplication-operation .row:last-child {
-    border-bottom: 1px solid #ccc;
+#multiplication-operations .result {
+    margin-left: 0.4rem;
 }
