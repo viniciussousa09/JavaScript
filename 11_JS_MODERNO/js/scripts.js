@@ -68,5 +68,44 @@ const user = {
     }
 };
 
-user.sayUserName();
-user.sayUserNameArrow();
+// user.sayUserName();
+// user.sayUserNameArrow();
+
+// 3 - filter
+const arr = [1, 2, 3, 4, 5, 6];
+
+const highNumbers = arr.filter((n) => {
+    if (n >= 3) {
+        return n;
+    }
+});
+
+console.log(highNumbers);
+
+const users = [
+    { name: "Vinicius", available: true },
+    { name: "Lais", available: false },
+    { name: "Giovanna", available: true },
+    { name: "Sophia", available: false },
+    { name: "Alice", available: true },
+];
+
+const availableUsers = users.filter((user) => user.available);
+
+console.log(availableUsers);
+
+// 4 - map
+const products = [
+    { name: "Camisa", price: 10.99, category: "Roupas" },
+    { name: "Chaleira elétrica", price: 150, category: "Eletro" },
+    { name: "Fogão", price: 499, category: "Eletro" },
+    { name: "Calça jeans", price: 87.99, category: "Roupas" },
+];
+
+products.map((product) => {
+    if (product.category === "Roupas") {
+        product.onSale = true;
+    }
+});
+
+console.log(products);
