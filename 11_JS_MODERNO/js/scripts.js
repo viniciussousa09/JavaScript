@@ -109,3 +109,66 @@ products.map((product) => {
 });
 
 console.log(products);
+
+// 5 - Template literals
+const userName = "Vinicius";
+const age = 38;
+
+console.log(`O nome do usuário é ${userName} e ele tem ${age} anos`);
+
+// 6 - Destructuring
+const fruits = ["Maçã", "Mamão", "Laranja"];
+
+const [f1, f2, f3] = fruits;
+
+console.log(f1, f3);
+
+const productDetails = {
+    name: "Mouse",
+    price: 39.99,
+    category: "Periférico",
+    color: "Cinza",
+};
+
+const { name: productName, price, category, color } = productDetails;
+
+console.log(`O nome do produto é ${productName}, ele custa R$${price} e é da cor ${color}.`);
+
+// 7 - Spread operator
+const a1 = [1, 2, 3];
+const a2 = [4, 5, 6];
+
+const a3 = [...a1, ...a2];
+
+console.log(a3);
+
+const a4 = [0, ...a3, 7];
+
+console.log(a4);
+
+const carName = { name: "Gol" };
+const carBrand = { brand: "VW" };
+const otherInfos = { km: 100000, price: 49999 };
+
+const car = { ...carName, ...carBrand, ...otherInfos };
+
+console.log(car);
+
+// 8 - Classes
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    productWithDiscount(discount) {
+        return this.price * ((100 - discount) / 100);
+    }
+}
+
+const shirt = new Product("Camisa gola V", 20);
+
+console.log(shirt);
+
+console.log(shirt.productWithDiscount(10));
+console.log(shirt.productWithDiscount(15));
