@@ -2,6 +2,15 @@
 const generatePasswordButton = document.querySelector("#generate-password");
 const generatedPasswordElement = document.querySelector("#generated-password");
 
+// Novas funcionalidades
+const openCloseGeneratorButton = document.querySelector("#open-generate-password");
+const generatePaswordContainer = document.querySelector("#generate-options");
+const lengthInput = document.querySelector("#lenght");
+const lettersInput = document.querySelector("#letters");
+const numbersInput = document.querySelector("#numbers");
+const symbolsInput = document.querySelector("#symbols");
+const copyPasswordButton = document.querySelector("#copy-password");
+
 // Funções
 const getLetterLowercase = () => {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -28,15 +37,28 @@ const generatePassword = (
 
     let password = "";
 
-    // Para este exemplo, definimos o tamanho fixo da senha
-    const passwordLength = 10;
+    // Segunda versão
+    const passwordLength = +lengthInput.value;
 
-    const generators = [
-        getLetterLowercase,
-        getLetterUppercase,
-        getNumber,
-        getSymbol,
-    ];
+    const generators = [];
+
+    if (lettersInput.checked) {
+        generators.push(getLetterLowercase, getLetterUppercase);
+    }
+
+    if (numbersInput.checked) {
+        generators.push(getNumber);
+    }
+
+    if (symbolsInput.checked) {
+        generators.push(getSymbol);
+    }
+
+    console.log(generators.length);
+
+    if (generators.length === 0) {
+        return;
+    }
 
     for (i = 0; i < passwordLength; i = i + generators.length) {
         generators.forEach(() => {
@@ -57,4 +79,8 @@ generatePasswordButton.addEventListener("click", () => {
         getLetterUppercase,
         getNumber,
         getSymbol);
+});
+
+openCloseGeneratorButton.addEventListener("click", () => {
+    generatePaswordContainer.classList.toggle("hide");
 });
