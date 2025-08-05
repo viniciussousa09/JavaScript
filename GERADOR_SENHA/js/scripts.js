@@ -1,6 +1,6 @@
 // Seleção de Elementos
 const generatePasswordButton = document.querySelector("#generate-password");
-const generatedPasswordButton = document.querySelector("#generated-password");
+const generatedPasswordElement = document.querySelector("#generated-password");
 
 // Funções
 const getLetterLowercase = () => {
@@ -20,9 +20,41 @@ const getSymbol = () => {
     return symbols[Math.floor(Math.random() * symbols.length)];
 };
 
-console.log(getSymbol());
+const generatePassword = (
+    getLetterLowercase,
+    getLetterUppercase,
+    getNumber,
+    getSymbol) => {
+
+    let password = "";
+
+    // Para este exemplo, definimos o tamanho fixo da senha
+    const passwordLength = 10;
+
+    const generators = [
+        getLetterLowercase,
+        getLetterUppercase,
+        getNumber,
+        getSymbol,
+    ];
+
+    for (i = 0; i < passwordLength; i = i + generators.length) {
+        generators.forEach(() => {
+            const randomValue = generators[Math.floor(Math.random() * generators.length)]();
+            password += randomValue;
+        });
+    }
+
+    password = password.slice(0, passwordLength);
+
+    generatedPasswordElement.style.display = "block";
+    generatedPasswordElement.querySelector("h4").innerText = password;
+};
 
 // Eventos
 generatePasswordButton.addEventListener("click", () => {
-    console.log("teste");
+    generatePassword(getLetterLowercase,
+        getLetterUppercase,
+        getNumber,
+        getSymbol);
 });
