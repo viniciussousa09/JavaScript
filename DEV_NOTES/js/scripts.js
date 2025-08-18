@@ -7,11 +7,17 @@ const addNoteBtn = document.querySelector(".add-note");
 
 // Funções
 function showNotes() {
+    cleanNotes();
+
     getNotes().forEach((note) => {
         const noteElement = creatNote(note.id, note.content, note.fixed);
 
         notesContainer.appendChild(noteElement);
     });
+}
+
+function cleanNotes() {
+    notesContainer.replaceChildren([]);
 }
 
 function addNote() {
@@ -78,6 +84,8 @@ function toggleFixNote(id) {
     targetNote.fixed = !targetNote.fixed;
 
     saveNotes(notes);
+
+    showNotes();
 }
 
 
@@ -85,7 +93,9 @@ function toggleFixNote(id) {
 function getNotes() {
     const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 
-    return notes;
+    const orderedNotes = notes.sort((a, b) => (a.fixed > b.fixed ? -1 : 1));
+
+    return orderedNotes;
 }
 
 function saveNotes(notes) {
